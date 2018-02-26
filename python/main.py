@@ -8,6 +8,14 @@ import ImageColor
 import RPi.GPIO as GPIO
 import socket
 
+def get_host_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        ip = s.getsockname()[0]
+    finally:
+        s.close()
+    return ip
 def bcallback(KEY):
 	print(KEY)
 	
@@ -40,11 +48,11 @@ def main():
 	draw.line([(127,0),(127,127)], fill = "BLUE",width = 5)
 	draw.line([(127,127),(0,127)], fill = "BLUE",width = 5)
 	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5
-	draw.rectangle([(18,10),(110,20)],fill = "RED")
+#draw.rectangle([(18,10),(110,20)],fill = "RED")
 	draw.text((33, 22), 'kjhtml', fill = "BLUE")
 	draw.text((0, 36), 'IPaddess： ', fill = "BLUE")
 	LCD.LCD_ShowImage(image,0,0)	
-	draw.text((0, 50), socket.gethostbyname(socket.gethostname()), fill = "BLUE")
+	draw.text((0, 50), get_host_ip(), fill = "BLUE")
 	LCD.LCD_ShowImage(image,0,0)	
 		  
 	while (True):
