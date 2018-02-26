@@ -16,6 +16,7 @@ def get_host_ip():
     finally:
         s.close()
     return ip
+
 def bcallback(KEY):
 	print(KEY)
 	
@@ -50,12 +51,10 @@ def main():
 	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5
 #draw.rectangle([(18,10),(110,20)],fill = "RED")
 	draw.text((33, 22), 'kjhtml', fill = "BLUE")
-	draw.text((0, 36), 'IPaddess： ', fill = "BLUE")
+	draw.text((0, 36), 'IPaddess:', fill = "BLUE")
 	LCD.LCD_ShowImage(image,0,0)	
 	draw.text((0, 50), get_host_ip(), fill = "BLUE")
-	LCD.LCD_ShowImage(image,0,0)	
-		  
-	while (True):
-		  
+	LCD.LCD_ShowImage(image,0,0)		  
+#while (True):		  
 if __name__ == '__main__':
     main()
