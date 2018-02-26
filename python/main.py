@@ -48,7 +48,7 @@ def main():
 	draw.line([(0,0),(127,0)], fill = "BLUE",width = 5)
 	draw.line([(127,0),(127,127)], fill = "BLUE",width = 5)
 	draw.line([(127,127),(0,127)], fill = "BLUE",width = 5)
-	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5
+	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5)
 #draw.rectangle([(18,10),(110,20)],fill = "RED")
 	draw.text((33, 22), 'kjhtml', fill = "BLUE")
 	draw.text((0, 36), 'IPaddess:', fill = "BLUE")
