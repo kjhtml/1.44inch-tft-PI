@@ -51,12 +51,13 @@ def main():
 	draw.line([(127,127),(0,127)], fill = "BLUE",width = 5)
 	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5)
 #draw.rectangle([(18,10),(110,20)],fill = "RED")
+	font = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc', 16)
 	draw.text((8, 8), 'kj哈哈', fill = "BLUE")
-	draw.text((8, 18), 'IPaddess:', fill = "BLUE")
+	draw.text((8, 24), 'IPaddess:', fill = "BLUE")
 	LCD.LCD_ShowImage(image,0,0)
-	draw.text((8, 28), get_host_ip(), fill = "BLUE")
+	draw.text((8, 38), get_host_ip(), fill = "BLUE")
 	LCD.LCD_ShowImage(image,0,0)
 	while (True):
-		time.wait(10)
+		time.sleep(10)
 if __name__ == '__main__':
     main()
