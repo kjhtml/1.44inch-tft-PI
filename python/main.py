@@ -1,4 +1,4 @@
-
+#coding=utf-8
 import LCD_1in44
 import LCD_Config
 import Image
@@ -7,6 +7,7 @@ import ImageFont
 import ImageColor
 import RPi.GPIO as GPIO
 import socket
+import time
 
 def get_host_ip():
     try:
@@ -50,11 +51,12 @@ def main():
 	draw.line([(127,127),(0,127)], fill = "BLUE",width = 5)
 	draw.line([(0,127),(0,0)], fill = "BLUE",width = 5)
 #draw.rectangle([(18,10),(110,20)],fill = "RED")
-	draw.text((33, 22), 'kjhtml', fill = "BLUE")
-	draw.text((0, 36), 'IPaddess:', fill = "BLUE")
-	LCD.LCD_ShowImage(image,0,0)	
-	draw.text((0, 50), get_host_ip(), fill = "BLUE")
-	LCD.LCD_ShowImage(image,0,0)		  
-#while (True):		  
+	draw.text((8, 8), 'kj哈哈', fill = "BLUE")
+	draw.text((8, 18), 'IPaddess:', fill = "BLUE")
+	LCD.LCD_ShowImage(image,0,0)
+	draw.text((8, 28), get_host_ip(), fill = "BLUE")
+	LCD.LCD_ShowImage(image,0,0)
+	while (True):
+		time.wait(10)
 if __name__ == '__main__':
     main()
